@@ -1,21 +1,21 @@
-name: CI - Aula 04 (Exceções, Arquivos e Logging)
+name: CI - Aula 03 (Funções e Estruturas de Dados)
 
 on:
   push:
     branches: [ "master" ]
     paths:
-      - "AULA04/**"
-      - "tests/test_aula04.py"
+      - "AULA03/**"
+      - "tests/test_aula03.py"
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches: [ "master" ]
     paths:
-      - "AULA04/**"
-      - "tests/test_aula04.py"
+      - "AULA03/**"
+      - "tests/test_aula03.py"
 
 jobs:
-  validar_aula04:
-    name: Lint e Testes – AULA04
+  validar_aula03:
+    name: Lint e Testes – AULA03
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -45,6 +45,7 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Executar Testes – processador_csv.py
+
+      - name: Executar Testes – mod_rh.py
         run: |
-          pytest tests/test_aula04.py -v
+          pytest tests/test_aula03.py -v
